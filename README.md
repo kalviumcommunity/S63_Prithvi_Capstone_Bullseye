@@ -81,4 +81,4 @@ Week 4: Final Features & Testing
  📅 Day 26-27 – Implement Event Calendar for Shooting Tournaments.
  📅 Day 28 – Perform API testing with Bruno & UI testing.
  📅 Day 29 – Deploy on AWS and ensure all features are functional.
- 📅 Day 30 – Final debugging & documentation.
+ 📅 Day 30 – Final debugging & documentats.
