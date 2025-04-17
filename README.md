@@ -35,7 +35,7 @@ Frontend: React.js – Builds a fast and interactive user interface.
 Backend: Node.js with Express.js – Manages API requests and handles user data.
 
 
-Database: MongoDB – Stores shooter profiles, training logs, and target images.
+Database: MongoDB – Stores shooter profiles, training logs, and target images & Cloudinary for images upload.
 
 
 Authentication: Firebase Authentication – Secures user login and session management.

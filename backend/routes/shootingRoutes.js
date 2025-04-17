@@ -23,4 +23,30 @@ router.get('/sessions/:id', async (req, res) => {
   }
 });
 
-module.exports = router;
+// POST a new session
+router.post('/sessions', async (req, res) => {
+    try {
+        const { shooterName, score, shotsFired, duration, targetImageUrl } = req.body;
+        
+        // Validate required fields
+        if (!shooterName || !score || !shotsFired) {
+            return res.status(400).json({ error: 'Missing required fields: shooterName, score, shotsFired' });
+        }
+
+        const newSession = new ShootingSession({
+            shooterName,
+            score,
+            shotsFired,
+            duration: duration || 0,  // Default to 0 if not provided
+            targetImageUrl: targetImageUrl || ''  // Optional field
+        });
+
+        const savedSession = await newSession.save();
+        res.status(201).json(savedSession);
+
+    } catch (err) {
+        res.status(500).json({ error: 'Failed to create session', details: err.message });
+    }
+});
+
+module.exports = router;  // Don't forget to export!

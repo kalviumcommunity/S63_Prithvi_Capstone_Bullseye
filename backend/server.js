@@ -9,6 +9,7 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+
 const shootingRoutes = require('./routes/shootingRoutes');
 app.use('/api', shootingRoutes);
 
@@ -50,6 +51,7 @@ app.get('/api/sessions/:id', async (req, res) => {
     res.status(500).json({ error: 'Error retrieving session' });
   }
 });
+
 
 // Server Start
 const PORT = process.env.PORT || 6000;
