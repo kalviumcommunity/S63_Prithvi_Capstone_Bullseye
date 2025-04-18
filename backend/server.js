@@ -13,6 +13,7 @@ app.use(express.json());
 const shootingRoutes = require('./routes/shootingRoutes');
 app.use('/api', shootingRoutes);
 
+
 // MongoDB Connection
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log('MongoDB connected'))
