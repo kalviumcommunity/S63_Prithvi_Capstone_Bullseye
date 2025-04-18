@@ -49,4 +49,36 @@ router.post('/sessions', async (req, res) => {
     }
 });
 
+// PUT endpoint to update a session by ID
+router.put('/sessions/:id', async (req, res) => {
+  try {
+    // Validate request body
+    const { shooterName, score, shotsFired, duration, targetImageUrl } = req.body;
+    
+    // Create object with only provided fields
+    const updateData = {};
+    if (shooterName) updateData.shooterName = shooterName;
+    if (score !== undefined) updateData.score = score;
+    if (shotsFired !== undefined) updateData.shotsFired = shotsFired;
+    if (duration !== undefined) updateData.duration = duration;
+    if (targetImageUrl) updateData.targetImageUrl = targetImageUrl;
+    
+    const updatedSession = await ShootingSession.findByIdAndUpdate(
+      req.params.id,
+      updateData,
+      { new: true, runValidators: true } // returns the updated document and runs validators
+    );
+    
+    if (!updatedSession) {
+      return res.status(404).json({ message: 'Session not found' });
+    }
+    
+    res.status(200).json(updatedSession);
+  } catch (error) {
+    res.status(500).json({ error: 'Failed to update session', details: error.message });
+  }
+});
+
+
 module.exports = router;  // Don't forget to export!
+
