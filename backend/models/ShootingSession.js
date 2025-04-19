@@ -1,15 +1,27 @@
+// models/shootingSession.js
 const mongoose = require('mongoose');
 
-const ShootingSessionSchema = new mongoose.Schema({
-    date: {
-        type: Date,
-        default: Date.now
-      },
-      shooterName: String,
-      score: Number,
-      shotsFired: Number,
-      duration: Number, // 
-      targetImageUrl: String
+const shootingSessionSchema = new mongoose.Schema({
+  shooterName: {
+    type: String,
+    required: true
+  },
+  date: {
+    type: Date,
+    default: Date.now
+  },
+  durationMinutes: Number,
+  shotsFired: {
+    type: Number,
+    required: true
+  },
+  score: {
+    type: Number,
+    required: true
+  },
+  imageUrl: String // For uploading target image
 });
 
-module.exports = mongoose.models.ShootingSession || mongoose.model('ShootingSession', ShootingSessionSchema);
+const ShootingSession = mongoose.model('ShootingSession', shootingSessionSchema);
+
+module.exports = ShootingSession;
