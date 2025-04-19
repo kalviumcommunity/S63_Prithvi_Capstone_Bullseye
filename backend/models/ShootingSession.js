@@ -13,4 +13,3 @@ const ShootingSessionSchema = new mongoose.Schema({
 });
 
 module.exports = mongoose.models.ShootingSession || mongoose.model('ShootingSession', ShootingSessionSchema);
-
