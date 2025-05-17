@@ -9,7 +9,7 @@ const ShootingSessionSchema = new mongoose.Schema({
       score: Number,
       shotsFired: Number,
       duration: Number, // in minutes or seconds
-      targetImageUrl: String // URL or path to image
+      targetImageUrl: String // URL or path to img
 });
 
 module.exports = mongoose.models.ShootingSession || mongoose.model('ShootingSession', ShootingSessionSchema);
