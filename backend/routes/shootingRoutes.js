@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const ShootingSession = require('../models/ShootingSession.js');
+const ShootingSession = require('../models/shootingSession.js');
 
 // GET all sessions
 router.get('/sessions', async (req, res) => {
@@ -12,7 +12,7 @@ router.get('/sessions', async (req, res) => {
   }
 });
 
-// GET a specific session by ID
+// GET a specific session by id
 router.get('/sessions/:id', async (req, res) => {
   try {
     const session = await ShootingSession.findById(req.params.id);
