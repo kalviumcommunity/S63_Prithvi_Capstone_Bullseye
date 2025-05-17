@@ -12,7 +12,7 @@ router.get('/sessions', async (req, res) => {
   }
 });
 
-// GET a specific session by ID
+// GET a specific session by id
 router.get('/sessions/:id', async (req, res) => {
   try {
     const session = await ShootingSession.findById(req.params.id);
