@@ -1,6 +1,6 @@
 const express = require('express');
 const router = express.Router();
-const ShootingSession = require('../models/ShootingSession.js');
+const ShootingSession = require('../models/shootingSession.js');
 
 // GET all sessions
 router.get('/sessions', async (req, res) => {
