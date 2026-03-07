@@ -1,0 +1,15 @@
+[build]
+  base = "client"
+  command = "npm run build"
+  publish = "build"
+
+[dev]
+  framework = "#custom"
+  command = "npm start"
+  targetPort = 6000
+  port = 8888
+
+[[redirects]]
+  from = "/api/*"
+  to = "http://localhost:6000/api/:splat"
+  status = 200
