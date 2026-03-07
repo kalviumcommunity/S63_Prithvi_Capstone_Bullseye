@@ -86,5 +86,6 @@ Week 4: Final Features & Testing
 
 
 RENDER DEPLOY LINK: https://s63-prithvi-capstone-bullseye.onrender.com
+FRONTEND DEPLOY LINK: https://vercel.com/prithvi-s-projects-4a51d972/deploying-your-front-end-practice-assignment-2/AGmb2AmSjn9WYMKphP6d4obC9HqT
 
 
