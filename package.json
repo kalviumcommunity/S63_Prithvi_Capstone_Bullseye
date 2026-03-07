@@ -1,0 +1,7 @@
+{
+  "name": "bullseye",
+  "private": true,
+  "scripts": {
+    "dev": "cd client && npm run dev"
+  }
+}
